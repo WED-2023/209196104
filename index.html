@@ -1,193 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כפתור לייק</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .like-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .like-button:hover {
+            background-color: #005f73;
+        }
+    </style>
 </head>
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
-</div>
-		  
-<section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
-</section>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#photos">תמונות</a></li>
+            <li><a href="#playlist">פלייליסט</a></li>
+            <li><a href="#Q&A">Q&A</a></li>
+            <li><a href="#contact">צור קשר</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1 class="sweet-title">קצת עליי</h1>
+        <p id="about" class="text">שמי מרדכי (מוטי) וייזמן, אבל הנכדים קוראים לי "סבא מוטי ההאקר". אני בן 78, חובב טכנולוגיה, שחמט וקפה שחור חזק. בילדותי לא היו סמארטפונים, אז היינו מתקשרים עם יונים, בערך... 😆
+            שירתתי בצבא בתחום הקשר, ולאחר מכן עבדתי כמהנדס מערכות מידע עוד כשהמחשבים מילאו חדרים שלמים. היום אני לומד תכנות ב-Python (כדי להישאר בעניינים) ואפילו עוזר לנכד שלי לעשות שיעורי בית במדעי המחשב.
+            חוץ מזה, אני חובב גאדג'טים, קורא המון על מדע בדיוני, ולפעמים גם נותן עצות לחיים – למרות שלא תמיד מקשיבים לי. 😉
+            
+            </p>
+    </section>
+     
 
-<section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
-</section>
+    <section class="img-container"  id="photos">
+        <h2 class="sweet-title" >התמונות שלי</h2>
+        <img class ="img-hover" src="/Users/romsheynis/Desktop/WEB/ImageGen Mar 26, 2025, 04_24_20 PM.png" alt="סבאלה" width="200">
+        <img class="img-hover" src="/Users/romsheynis/Desktop/WEB/Mar 26, 2025, 04_29_46 PM.png" alt="סבאלה2" width="300">
+        <img class="img-hover" src="/Users/romsheynis/Desktop/WEB/ImageGen Mar 27, 2025, 06_35_17 PM.png" alt="סבאלה צעיר" width="300">
+    </section>
+    
+    <section>
+        <button class="like-button" onclick="increaseLike()">👍 לייק <span id="like-count">0</span></button>
+    <script>
+        
+    
+        let likeCount = localStorage.getItem('likeCount') || 0;
+        document.getElementById('like-count').innerText = likeCount;
 
-<section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
-</section>
-
-<section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
-</section>
-
-<section id="qrcoder" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-scan my code
-<br/>
-<br/>
-<br/>
-</section>
-
-<section id="spa" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-ans
-<br/>
-<br/>
-<br/>
-</section>
-
-<section id="contact" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
-</section>
-
-
-<script type="text/javascript">
-$(function(){
-  $("#nav a").click(function(e){
-    e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
-  });
-});
-</script>
-<script type="text/javascript">
- $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
- });​
- </script>
+        function increaseLike() {
+            likeCount++;
+            document.getElementById('like-count').innerText = likeCount;
+            localStorage.setItem('likeCount', likeCount); 
+        }
+    </script>
+    </section>
+    <section>
+        <iframe id = "playlist" width="560" height="315" src="https://www.youtube.com/embed/stZRFhO_HGs?si=ceObbZ5uQF9cXV2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <section class="text">
+        <h2 id="Q&A" class="sweet-title">Q&A</h2>
+        
+        <h3>מה ההבדלים בין Web1, Web2 ו-Web3?</h3>
+        
+        <section class="qa-container">
+            <section class="qa-item">
+                <h4> Web 1.0 – האינטרנט לקריאה בלבד</h4>
+                <p>
+                    הדור הראשון של האינטרנט (1990-2000) היה כמו ספר דיגיטלי – אתרים סטטיים שסיפקו מידע לקריאה בלבד, 
+                    בלי אפשרות למשתמשים להגיב, לשתף או להוסיף תוכן. אתרים כמו Yahoo ו-MSN היו דוגמאות קלאסיות לתקופה הזו.
+                </p>
+            </section>
+    
+            <section class="qa-item">
+                <h4> Web 2.0 – האינטרנט האינטראקטיבי</h4>
+                <p>
+                    עם הזמן, האינטרנט הפך להיות הרבה יותר **אינטראקטיבי ודינמי**. Web 2.0 הביא איתו רשתות חברתיות, בלוגים, פורומים
+                    ושירותים מבוססי תוכן שנוצר על ידי משתמשים (UGC). כאן התחילו לצוץ פלטפורמות כמו **Facebook, YouTube, ו-Wikipedia**.
+                </p>
+            </section>
+    
+            <section class="qa-item">
+                <h4> Web 3.0 – האינטרנט החכם והמבוזר</h4>
+                <p>
+                    Web 3.0 מבוסס על **בינה מלאכותית, בלוקצ'יין ואפליקציות מבוזרות (DApps)**. הוא מאפשר לאנשים לשלוט על הנתונים שלהם, 
+                    להשתמש בטכנולוגיות כמו קריפטו, ולחוות אינטרנט מותאם אישית. AI, ChatGPT, ומטבעות קריפטו הם חלק מהעולם הזה.
+                </p>
+            </section>
+        </section>
+    </section>
+    
+    <section id ="contact" class="text">
+        <h2 class="sweet-title">צרו קשר</h2>
+        
+        <form class="contact-form">
+            <label for="name">שם מלא:</label>
+            <input type="text" id="name" name="name" placeholder="הכניסו את שמכם" required>
+            
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" placeholder="כתבו כאן את ההודעה שלכם..." rows="5" required></textarea>
+    
+            <button type="submit">שלח הודעה</button>
+        </form>
+    </section>
+    
 </body>
 </html>
