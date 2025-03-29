@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>סבא מוטי</title>
     <link rel="stylesheet" href="/209196104/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .like-button {
             background-color: #008CBA;
@@ -77,6 +78,30 @@
             document.getElementById('like-count').innerText = likeCount;
             localStorage.setItem('likeCount', likeCount); 
         }
+
+        $(document).ready(function() {
+    $("#menu a, .nav-links a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 80
+            }, 800, function() {
+                history.pushState(null, null, hash);
+            });
+        }
+    });
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('#menu').addClass('menu-scrolled');
+        } else {
+            $('#menu').removeClass('menu-scrolled');
+        }
+    });
+});
+
     </script>
     </section>
     <section id = "playlist">
