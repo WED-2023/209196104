@@ -53,15 +53,15 @@
     <section>
         <button class="like-button" onclick="increaseLike()">👍 לייק <span id="like-count">0</span></button>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     function addEmoji(emoji) {
         let messageBox = document.getElementById("message");
         if (messageBox) {
-            messageBox.value += emoji;
+            messageBox.value += emoji; 
         }
     }
 
-    
+
     document.querySelectorAll(".emoji").forEach(emoji => {
         emoji.addEventListener("click", function () {
             addEmoji(this.textContent);
@@ -69,7 +69,6 @@
     });
 });
 
-    
         let likeCount = localStorage.getItem('likeCount') || 0;
         document.getElementById('like-count').innerText = likeCount;
 
@@ -78,7 +77,6 @@
             document.getElementById('like-count').innerText = likeCount;
             localStorage.setItem('likeCount', likeCount); 
         }
-
         $(document).ready(function() {
     $("#menu a, .nav-links a").on('click', function(event) {
         if (this.hash !== "") {
@@ -88,6 +86,7 @@
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 80
             }, 800, function() {
+
                 history.pushState(null, null, hash);
             });
         }
@@ -124,6 +123,11 @@ function getZodiacMatch() {
     Aquarius: { percent: 89, msg: "מזל דלי – הוגה דעות עתידני, בדיוק כמו סבא מוטי כשהוא כותב קוד." },
     Pisces: { percent: 83, msg: "מזל דגים – חלומות גדולים? סבא חולם איתך ביחד." }
   };
+
+  const { percent, msg } = matches[zodiac];
+  result.innerHTML = `✨ ${percent}% התאמה אסטרולוגית!<br>💬 ${msg}`;
+}
+
 
     </script>
     </section>
