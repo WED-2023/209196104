@@ -101,6 +101,29 @@
         }
     });
 });
+function getZodiacMatch() {
+  const zodiac = document.getElementById("zodiac-sign").value;
+  const result = document.getElementById("zodiac-result");
+
+  if (!zodiac) {
+    result.innerText = "📿 אנא בחר מזל מהיקום כדי לקבל את ברכת מוטי.";
+    return;
+  }
+
+  const matches = {
+    Aries: { percent: 92, msg: "מזל טלה – אתה כמו קפה שחור: בועט ומעיר את הנשמה של מוטי." },
+    Taurus: { percent: 67, msg: "מזל שור – אתה יציב כמו דיסקט, אבל סבא אוהב הרפתקאות." },
+    Gemini: { percent: 88, msg: "מזל תאומים – פעמיים חכם? סבא מוטי מעריך את זה!" },
+    Cancer: { percent: 73, msg: "מזל סרטן – אתה רגיש, בדיוק כמו מוטי כשהוא שומע שיר ישן של אריק איינשטיין." },
+    Leo: { percent: 95, msg: "מזל אריה – מלך, אבל רק אם תוותר על הבמה למוטי לפעמים." },
+    Virgo: { percent: 60, msg: "מזל בתולה – אתה פרפקציוניסט, אבל סבא מוטי מאולתר באופי." },
+    Libra: { percent: 80, msg: "מזל מאזניים – אתה מאוזן, אבל סבא אוהב קצת דרמה 😉" },
+    Scorpio: { percent: 77, msg: "מזל עקרב – אתה עמוק, מסתורי, בדיוק כמו הסיסמה של ה-WiFi של מוטי." },
+    Sagittarius: { percent: 91, msg: "מזל קשת – סבא אוהב את החופש שלך! מתאים לו לטיול בברלין." },
+    Capricorn: { percent: 65, msg: "מזל גדי – חרוץ, רציני... אבל סבא לפעמים רק רוצה לנוח עם עוגיה." },
+    Aquarius: { percent: 89, msg: "מזל דלי – הוגה דעות עתידני, בדיוק כמו סבא מוטי כשהוא כותב קוד." },
+    Pisces: { percent: 83, msg: "מזל דגים – חלומות גדולים? סבא חולם איתך ביחד." }
+  };
 
     </script>
     </section>
@@ -154,6 +177,27 @@
     </section>
 
     <section id="contact" class="text">
+        <section id="zodiac-match" class="text">
+            <h2 class="sweet-title">🔮 התאמה אסטרולוגית עם סבא מוטי</h2>
+            <label for="zodiac-sign">בחר את המזל שלך:</label>
+            <select id="zodiac-sign" style="padding: 10px; margin: 10px; border-radius: 6px;">
+              <option value="">-- בחר מזל --</option>
+              <option value="Aries">טלה</option>
+              <option value="Taurus">שור</option>
+              <option value="Gemini">תאומים</option>
+              <option value="Cancer">סרטן</option>
+              <option value="Leo">אריה</option>
+              <option value="Virgo">בתולה</option>
+              <option value="Libra">מאזניים</option>
+              <option value="Scorpio">עקרב</option>
+              <option value="Sagittarius">קשת</option>
+              <option value="Capricorn">גדי</option>
+              <option value="Aquarius">דלי</option>
+              <option value="Pisces">דגים</option>
+            </select>
+            <button onclick="getZodiacMatch()" class="like-button">בדוק התאמה קוסמית 💫</button>
+            <p id="zodiac-result" style="font-size: 20px; margin-top: 15px;"></p>
+        </section>
         <h2 class="sweet-title">צרו קשר</h2>
         
         <form class="contact-form">
